@@ -2,6 +2,7 @@ module.exports = {
   base: '/docs/',
   title: 'grant\'s tech docs',
   description: 'coding docs',
+  dest: './dist',
   markdown: {
     lineNumbers: true,
   },
