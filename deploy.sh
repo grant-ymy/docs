@@ -4,10 +4,11 @@ set -e
 
 yarn docs:build
 
-cd dist
-
-git add .
+git add dist
 git commit -m 'auto deploy'
-git push
+git subtree push --prefix dist origin gh-pages
+rm -r dist
+
+echo "deploy done"
 
 cd -
