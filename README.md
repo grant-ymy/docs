@@ -4,14 +4,6 @@
 
 整理记录编程生涯中的一些技术知识点和读书笔记等，将平时接触到的理论知识逐渐系统化，构建自己的知识库。
 
-## 目录
+## Git Pages 预览地址
 
-- PHP
-- MySQL
-- Linux
-- Docker
-- Laravel
-- Go
-- 常用工具
-- 前端
-- 书单
+[https://grant-ymy.github.io/docs](https://grant-ymy.github.io/docs)

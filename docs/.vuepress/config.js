@@ -23,6 +23,12 @@ module.exports = {
         sidebarDepth: 2,
         children: [
           'php/',
+          {
+            title: '框架',
+            children: [
+              'php/laravel/',
+            ],
+          },
         ],
       },
       {
@@ -33,10 +39,38 @@ module.exports = {
         ],
       },
       {
-        title: 'Laravel',
+        title: 'Linux',
         sidebarDepth: 2,
         children: [
-          'laravel/',
+          'linux/',
+        ],
+      },
+      {
+        title: 'go',
+        sidebarDepth: 2,
+        children: [
+          'go/',
+        ],
+      },
+      {
+        title: 'book',
+        sidebarDepth: 2,
+        children: [
+          'book/',
+        ],
+      },
+      {
+        title: 'docker',
+        sidebarDepth: 2,
+        children: [
+          'docker/',
+        ],
+      },
+      {
+        title: 'frontend',
+        sidebarDepth: 2,
+        children: [
+          'frontend/',
         ],
       },
     ]
