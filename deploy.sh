@@ -6,7 +6,7 @@ yarn docs:build
 
 git add dist
 git commit -m 'auto deploy'
-git subtree push --prefix dist origin gh-pages
+git push origin `git subtree split --prefix dist main`:gh-pages --force
 rm -r dist
 
 echo "deploy done"
