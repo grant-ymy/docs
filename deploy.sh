@@ -4,11 +4,16 @@ set -e
 
 yarn docs:build
 
-git add dist
+# deploy static dist
+git add -f dist
 git commit -m 'auto deploy'
 git push origin `git subtree split --prefix dist main`:gh-pages --force
+git update-index --skip-worktree dist/
 rm -r dist
 
-echo "deploy done"
+# push source code
+git add .
+git commit -m 'auto deploy'
+git push origin main
 
-cd -
+echo "All done!"

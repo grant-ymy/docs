@@ -18,14 +18,14 @@ module.exports = {
       locale: 'zh', //语言
       // 其他的 Vssue 配置
       owner: 'grant-ymy', //github账户名
-      repo: 'https://github.com/grant-ymy/docs', //github一个项目的名称
+      repo: 'docs', //github一个项目的名称
       clientId: '1eab3284f097e9b1d067',//注册的Client ID
       clientSecret: '285d5f1a0a443580a778dd0cbc23a3d990070ed0',//注册的Client Secret
       autoCreateIssue: true // 自动创建评论，默认是false，最好开启，这样首次进入页面的时候就不用去点击创建评论的按钮了。
     },
   },
   themeConfig: {
-    logo: '/head.png',
+    logo: '/head.jpg',
     repo: 'https://github.com/grant-ymy/docs',
     docsDir: 'docs',
     docsBranch: 'main',
@@ -39,7 +39,10 @@ module.exports = {
       { text: '首页', link: '/' },
     ],
     sidebar: [
-      ['/', '简介'],
+      {
+        title: '简介',
+        path: 'intro/'
+      },
       {
         title: 'PHP',
         sidebarDepth: 2,
