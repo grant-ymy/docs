@@ -105,6 +105,13 @@ module.exports = {
           'frontend/',
         ],
       },
+      {
+        title: 'Tool',
+        sidebarDepth: 2,
+        children: [
+          'tool/',
+        ],
+      },
     ]
   }
 }
