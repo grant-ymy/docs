@@ -35,7 +35,7 @@ cat /etc/resolv.conf | grep nameserver | awk '{print $2}'
 export ALL_PROXY="http://172.19.48.1:7890"
 ```
 
-由于这个 ip 在每次重启后都会变化，所以可以稍作优化，将以下代码加入终端配置中：
+由于这个 ip 在每次重启后都会变化，所以可以稍作优化，将以下代码加入终端配置(~/.zshrc)中：
 
 ```sh
 # clash proxy

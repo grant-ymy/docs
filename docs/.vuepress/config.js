@@ -68,6 +68,12 @@ module.exports = {
         sidebarDepth: 2,
         children: [
           'linux/',
+          {
+            title: '常用命令',
+            children: [
+              'linux/command/',
+            ],
+          }
         ],
       },
       {
