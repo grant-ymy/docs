@@ -62,3 +62,5 @@ New-NetFirewallRule -DisplayName "WSL" -Direction Inbound -InterfaceAlias "vEthe
 访问谷歌能够返回响应数据即成功。
 
 ![](./pics/verify-proxy.png)
+
+<Vssue  />
