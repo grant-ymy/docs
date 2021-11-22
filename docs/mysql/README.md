@@ -183,7 +183,31 @@ MySQL5.0 以上版本，varchar 最大可以存储 65535 字节数据（其中1-
 
 如果有 order by 的场景，注意索引的有序性，避免出现 file sort 的情况影响查询性能。
 
-  - 说明：where a=? and b=? order by c; 可以用到索引 a_b_c。如果索引中有范围查找，那么索引有序性无法利用，
+  - 说明：where a=? and b=? order by c; 可以用到索引 a_b_c。如果索引中有范围查找，那么索引有序性无法利用，如 where a > 10 order by b; 索引 a_b 无法使用。
+
+尽量利用覆盖索引来避免回表。
+
+关于分页优化，MySQL 的 limit 查询并不是跳过 offset 行，而是取 offset + N 行，然后舍弃前 offset 行。当 offset 很大的时候，效率自然就低下。可以利用子查询以索引覆盖从而提升性能：
+
+```sql
+select t1.* from t1, (select id from t1 limit 1000000, 20) as t2 where t1.id = t2.id;
+```
+
+查询的类型，效率从低到高依次为：all -> index -> range -> ref -> eq_ref -> const。
+
+sql 优化的目标：至少要达到 range 级别，const 最好。
+
+- 说明
+  - all: 全表扫描，性能最差，数据量大时应避免此类查询。
+  - index: 扫描全部索引，然后再回表取数据。
+  - range: 扫描部分索引，通常出现在 between / 大小比较 / in 中。
+  - ref: 使用了非唯一的索引。
+  - eq_ref: 使用了主键或唯一索引。
+  - const: 根据主键做等值查询。
+
+建索引时，区分度高的字段放在左边。
+
+防止因字段数据类型不同造成的隐式转换，造成命不中索引。
 
 
 
