@@ -73,7 +73,13 @@ module.exports = {
             children: [
               'linux/command/',
             ],
-          }
+          },
+          {
+            title: 'Shell',
+            children: [
+              'linux/shell/',
+            ],
+          },
         ],
       },
       {
