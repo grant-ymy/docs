@@ -58,9 +58,13 @@ module.exports = {
       },
       {
         title: 'MySQL',
-        sidebarDepth: 2,
+        sidebarDepth: 3,
         children: [
-          'mysql/',
+          'mysql/engine/',
+          'mysql/btree/',
+          'mysql/index/',
+          'mysql/transaction/',
+          'mysql/aliMysql/',
         ],
       },
       {
