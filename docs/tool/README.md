@@ -39,7 +39,7 @@ export ALL_PROXY="http://172.19.48.1:7890"
 
 ```sh
 # clash proxy
-host_ip=$(cat /etc/resolv.conf |grep "nameserver" |cut -f 2 -d " ")
+host_ip=$(cat /etc/resolv.conf | grep "nameserver" | awk '{print $2})
 export ALL_PROXY="http://$host_ip:7890"
 ```
 
